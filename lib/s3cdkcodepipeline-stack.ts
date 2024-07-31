@@ -20,7 +20,7 @@ export class s3CdkcodepipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'MyPipeline',
       synth: new ShellStep('SynthStep', {
-        input: CodePipelineSource.gitHub('thenamuthan/cdkcodepipline', 'main'),
+        input: CodePipelineSource.gitHub('thenamuthan/s3_cdkcodepipeline', 'main'),
         commands: ['npm ci', 'npm run build', 'npx cdk synth'],
         
       }),
