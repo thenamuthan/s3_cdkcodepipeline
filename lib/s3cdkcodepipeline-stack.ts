@@ -28,14 +28,14 @@ export class s3CdkcodepipelineStack extends cdk.Stack {
 
     // creating test stage
     const testStage = pipeline.addStage(new PipelineAppStage(this, 'TestStage', {
-      env: { account: '905418016855', region: 'us-east-2' },
+      env: { account: '905418016855', region: 'us-west-1' },
       stageName: 'Test',
     }));
 
     testStage.addPost(new ManualApprovalStep('ManualApproval'));
 
     const prodstage = pipeline.addStage( new PipelineAppStage(this, 'prodstage', {
-      env: { account: '905418016855', region: 'us-east-2' },
+      env: { account: '905418016855', region: 'us-west-1' },
       stageName: 'prod',
     }));
     
