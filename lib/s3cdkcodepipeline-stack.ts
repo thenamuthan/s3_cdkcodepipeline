@@ -5,11 +5,12 @@ import  * as pipeline from 'aws-cdk-lib/aws-codepipeline';
 import { CodePipeline, CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines';
 import * as secrets from 'aws-cdk-lib/aws-secretsmanager';
 import { PipelineAppStage } from '../lib/demoawspipeline-stacks';
-//import { PipelineAppStage } from '../lib/demoawspipeline-stack';
 import { ManualApprovalStep } from 'aws-cdk-lib/pipelines';
+import { Bucket } from 'aws-cdk-lib/aws-s3';
 
 
-export class CdkcodepiplineStack extends cdk.Stack {
+
+export class s3CdkcodepipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
